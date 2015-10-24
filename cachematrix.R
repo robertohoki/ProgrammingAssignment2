@@ -31,15 +31,15 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-        m <- x$getmean()
-        if(!is.null(m)) {
+        ma <- x$getmean()
+        if(!is.null(ma)) {
                 message("getting cached data matrix")
-                return(m)
+                return(ma)
         }
         data <- x$get()
-        m <- solve(data, ...)
-        x$setmean(m)
-        m
+        ma <- solve(data, ...)
+        x$setmean(ma)
+        ma
         
         
 }
